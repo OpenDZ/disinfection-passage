@@ -215,7 +215,7 @@ Congratulation if you see the next terminal window, you're connected to your dev
 
 ### Using ssh
 
-This is only for Linux
+This is only for Linux, default password is **raspberry**
 
 ```bash
 $ ssh pi@raspberrypi.local
