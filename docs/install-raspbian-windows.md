@@ -131,7 +131,7 @@ network={
 }
 ```
 
-  - Replace **ssid** with your Wifi Network Name and **psk** with your WiFi password.
+  - Replace **SSID** with your Wifi Network Name and **PASSWORD** with your WiFi password.
   - Save the file with the **wpa_supplicant.conf** under the **boot** partition.
   - **Make sure to save the file as wpa_supplicant.conf and not as wpa_supplicant.conf.txt as windows may add .txt
   extension automatically. Maybe save the file like this: "wpa_supplicant.conf" this way it won't be added. Otherwise
