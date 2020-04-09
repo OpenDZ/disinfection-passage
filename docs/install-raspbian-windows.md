@@ -1,9 +1,11 @@
 # Install Raspbian on Raspberry Pi for Windows users
 
 [Original document from Open Devices
-GmbH](https://github.com/opendevices/iot.apps/blob/master/doc/od-iot-raspbian-rpi-zero-windows.md)
+GmbH](https://github.com/ionoid-io-projects/workshop/blob/master/doc/od-iot-raspbian-rpi-zero-windows.md)
 
 Authors:
+
+[Belakhder Abdeldjalil](https://github.com/zendyani)
 
 [Djalal Harouni](https://github.com/tixxdz)
 
@@ -12,10 +14,12 @@ Authors:
 
 Install for:
 
+Raspberry Pi 3
 ![Raspberry Pi 3](../docs/img/RaspberryPi3header.jpg)
 
 Or
 
+Raspberry Pi Zero W (with WiFi)
 ![Raspberry Pi Zero W](../docs/img/RaspberryPiZeroheader.png)
 
 ---
@@ -78,14 +82,39 @@ Once it's finished  Etcher **unmount** automatically the MicroSD card.
 
 ## 3. Configure Wifi
 
- To configure WiFi connection on Rapsberry Pi Zero W do
+To prevent futur probleme we'll activate file extension display on windows by following 
+this instructions:
+
+### On windows 8 and 10
+
+- After opening a file browser click the “View” tab on the ribbon. 
+- Activate the “File name extensions” box in the Show/hide section to toggle file extensions on or off. 
+
+File Explorer will remember this setting until you disable it in the future.
+
+![extension](img/win10.png)
+
+### For windows 7
+
+- After opening a file browser Click the “Organize” button on Windows Explorer’s toolbar and select “Folder and search options” to open it.
+- Click the “View” tab at the top of the Folder Options window. Disable the “Hide extensions for known file types” checkbox under Advanced settings.
+- Click “OK” to change your settings.
+
+![win7 file extension](img/win7.png)
+
+![win7 file extension](img/win7.2.png)
+
+
+### Configure WiFi on Micro SDCard
+
+ To configure WiFi connection
 
   - Remove the MicroSD card from the SD card reader.
   - Reinsert the Micro SD card into computer SD card reader.
   - Observe that a *boot* partition will mount automatically. On Linux there will be two partitions, however on windows
   only the *boot* partition will be displayed.
 
-  ![Boot auto](https://github.com/opendevices/iot.apps/blob/master/doc/img/BootPartWindows.png)
+  ![Boot auto](img/BootPartWindows.png)
 
   - Open an empty **notepad** document and copy/paste the following lines
   - Use WiFi of your Android phone when starting this way you can easily get the Raspberry Pi IP address.
@@ -121,7 +150,7 @@ network={
  - Click on **File** and then **Save As..**, a dialog box is displayed.
  - Type an opening quotation mark, ssh and then closing quotation mark. Like this:  **"ssh"**
 
-![SSH Config Windows](https://github.com/opendevices/iot.apps/blob/master/doc/img/ConfigSshWindows.png)
+![SSH Config Windows](img/ConfigSshWindows.png)
 
  - Click on the SD card **boot** partition to save file on it.
  - Click the **Save** button.
@@ -133,20 +162,69 @@ network={
 - Insert the Micro SD into Raspberry Pi,
 - Power with Micro USB cable attached to electricity energy source, it is better.
 
-
 - To access to your Raspberry Pi , via your Windows computer you need a ssh client
   like putty [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 
-- Setup putty
-  * Host name : **raspberrypi.local**
-  * Port: **22**
-  * Default User Name: **pi**
-  * Default Password: **raspberry**
+
+To connect to your Raspberry device you must first get device ip, you may find it in your phone Hotspot or router,
+otherwise there are other ways how to get it, the easiest one is to install mobile app **Fing**, The Fing app is a free network scanner for smartphones.
+
+![the fing](img/fing.png)
+
+**Your phone and your Raspberry Pi have to be on the same network.**
+
+So connect your phone to the correct wireless network (same ssid you used in wpa_supplicant)
+- Start the app on your phone
+- click on refresh button
+- all connected ip will be displayed
+- search for the one with raspberry pi icon
+
+Congratulation you have your ip
+
+To explore more way please visit [get ip address of raspberry pi](https://www.raspberrypi.org/documentation/remote-access/ip-address.md)
 
 
-- Complete ssh command to connect:
+### Using putty
+
+Suppose your raspberry pi ip is **192.168.1.9** the result on putty will be as follow
+
+**pi** are the default user for rasbian 
+
+![first step](img/putty.png)
+
+After clicking on **Open** and you'll see a new windows asking you to trust the host you're going to connect to
+
+Just click yes (we trust our Raspberry pi)
+
+![key](img/putty1.1.png)
+
+a new terminal window will open ask you the password which is **raspberry**
+
+Dont worry if you dont see it when you type it, just type it and click Enter on your keyboard
+
+![next step](img/putty2.png)
+
+Congratulation if you see the next terminal window, you're connected to your device
+
+![final step](img/putty3.png)
+
+
+### Using ssh
+
+This is only for Linux
 
 ```bash
 $ ssh pi@raspberrypi.local
 ```
 
+
+### Security change user pi password
+
+After having a terminal on your Raspberry Pi, make sure to change the **pi** password for security with the **passwd**
+command.
+
+Inside your Raspberry Pi device terminal tape the following:
+
+```bash
+passwd
+```
