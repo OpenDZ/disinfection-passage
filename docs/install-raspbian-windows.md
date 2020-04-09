@@ -183,6 +183,10 @@ Congratulation you have your ip
 
 To explore more way please visit [get ip address of raspberry pi](https://www.raspberrypi.org/documentation/remote-access/ip-address.md)
 
+**Important: if you have multiple Raspberry Pis on the same network, the hostname will clash, as they are all by default
+named 'raspberry', when you login on the Raspberry Pi, make sure to change the hostname in /etc/hostname file to avoid
+such problems.**
+
 
 ### Using putty
 
@@ -228,3 +232,5 @@ Inside your Raspberry Pi device terminal tape the following:
 ```bash
 passwd
 ```
+
+**Note your new password**.
