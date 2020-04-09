@@ -4,6 +4,7 @@
 GmbH](https://github.com/opendevices/iot.apps/blob/master/doc/od-iot-raspbian-rpi-zero-windows.md)
 
 Authors:
+
 [Djalal Harouni](https://github.com/tixxdz)
 
 [Nazim Djafar](https://github.com/nwd0)
@@ -11,11 +12,11 @@ Authors:
 
 Install for:
 
-![Raspberry Pi 3](../master/docs/img/RaspberryPi3header.jpg)
+![Raspberry Pi 3](../docs/img/RaspberryPi3header.jpg)
 
 Or
 
-![Raspberry Pi Zero W](../master/docs/img/RaspberryPiZeroheader.png)
+![Raspberry Pi Zero W](../docs/img/RaspberryPiZeroheader.png)
 
 ---
 
@@ -105,8 +106,7 @@ network={
   - Save the file with the **wpa_supplicant.conf** under the **boot** partition.
   - **Make sure to save the file as wpa_supplicant.conf and not as wpa_supplicant.conf.txt as windows may add .txt
   extension automatically. Maybe save the file like this: "wpa_supplicant.conf" this way it won't be added. Otherwise
-  your WiFi setup will fail, yes thank you Windows for wasting users time...
-
+  your WiFi setup will fail, yes thank you Windows for wasting users time...**
 
 
   - Only for Linux: if you are working from Linux, save file under **rootfs** partition in **/etc/wpa_supplicant/**
