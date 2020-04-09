@@ -17,5 +17,7 @@ covid19.
 ## Authors
 
 [Belakhder Abdeldjalil](https://github.com/zendyani)
+
 [Djalal Harouni](https://github.com/tixxdz)
+
 [Nazim Djafar](https://github.com/nwd0)

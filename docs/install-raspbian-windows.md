@@ -3,18 +3,22 @@
 [Original document from Open Devices
 GmbH](https://github.com/opendevices/iot.apps/blob/master/doc/od-iot-raspbian-rpi-zero-windows.md)
 
-Authors: Nazim nwd0 and Djalal tixxdz
+Authors:
+[Djalal Harouni](https://github.com/tixxdz)
+
+[Nazim Djafar](https://github.com/nwd0)
 
 
 Install for:
 
-![Raspberry Pi 3](../)
+![Raspberry Pi 3](../master/docs/img/RaspberryPi3header.jpg)
 
 Or
 
 ![Raspberry Pi Zero W](../master/docs/img/RaspberryPiZeroheader.png)
 
 ---
+
 This guide will show you step by step, how to install a Raspbian OS on a 
 
 **Raspberry Pi 3 or Zero with WiFi**, enable **ssh** service and configure **WiFi** connection
